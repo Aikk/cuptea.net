@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/Aikk/photo-gallery/master/cuptea.png)
+![](http://oe9xuqhaz.bkt.clouddn.com/thumbnail.png)  
 Personal website, from design to development, clear and fast.
 
 ***

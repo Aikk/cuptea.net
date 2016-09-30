@@ -1,14 +1,16 @@
-'use strict';
+/**
+ * Build webpack configuration
+ * @type {[type]}
+ */
+const path = require('path'),
+      args = require('minimist')(process.argv.slice(2));
 
-const path = require('path');
-const args = require('minimist')(process.argv.slice(2));
+// List of environments
+const envs = ['dev', 'dist', 'test'];
 
-// 运行环境
-const Envs = ['dev', 'dist', 'test'];
-
-// 配置环境
+// Set the environment
 let env;
-if (args._.length > 0 && args._.startsWith('start')) {
+if (args._.length > 0 && args._.indexOf('start') !== -1) {
   env = 'test';
 } else if (args.env) {
   env = args.env;
@@ -18,14 +20,14 @@ if (args._.length > 0 && args._.startsWith('start')) {
 process.env.REACT_WEBPACK_ENV = env;
 
 /**
- * 构建 webpack config
- * @param  {String} build env
- * @return {Object} webpack config
+ * Build the webpack configuration
+ * @param  {String} buildEnv
+ * @return {Object} Webpack config
  */
-let buildConfig = (buildEnv) => {
-  let isValid = buildEnv && buildEnv.length > 0 && Envs.includes(buildEnv);
+function buildConfig(buildEnv) {
+  let isValid = buildEnv && buildEnv.length > 0 && envs.indexOf(buildEnv) !== -1;
   let validEnv = isValid ? buildEnv : 'dev';
-  let config = require(path.join(__dirname, 'config/' + buildEnv));
+  let config = require(path.resolve(__dirname, 'conf/' + validEnv));
   return config;
 }
 

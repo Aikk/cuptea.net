@@ -1,6 +1,13 @@
+# OS
+.DS_Store
+
 # log
 logs
 *.log
+
+# Sass
+.tags
+.tag*
 
 # Dependency directory
 node_modules
