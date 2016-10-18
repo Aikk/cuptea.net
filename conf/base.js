@@ -6,7 +6,6 @@ const defaults = require('./defaults');
 module.exports = {
   port: defaults.port,
   debug: true,
-  devtool: 'eval',
   output: {
     path: defaults.outputPath,
     publicPath: defaults.publicPath,
@@ -16,9 +15,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
     alias: {
       actions: `${defaults.srcPath}/actions`,
+      constants: `${defaults.srcPath}/constants`,
+      containers: `${defaults.srcPath}/containers`,
       components: `${defaults.srcPath}/components`,
+      store: `${defaults.srcPath}/store`,
+      reducers: `${defaults.srcPath}/reducers`,
       sources: `${defaults.srcPath}/sources`,
-      stores: `${defaults.srcPath}/stores`,
       styles: `${defaults.srcPath}/styles`
     }
   },

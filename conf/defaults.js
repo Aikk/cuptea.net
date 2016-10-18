@@ -26,12 +26,16 @@ let getDefaultModule = () => {
         loader: 'style-loader!css-loader'
       },
       {
-        test: /\.sass$/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded&indentedSyntax'
-      },
-      {
         test: /\.scss$/,
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
+        test: /\.(txt|md)$/,
+        loader: 'raw-loader'
       },
       {
         test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,

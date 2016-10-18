@@ -1,4 +1,4 @@
-require('core-js/fn/object/assign');
+require('babel-polyfill');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');

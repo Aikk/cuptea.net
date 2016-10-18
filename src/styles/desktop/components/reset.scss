@@ -63,3 +63,8 @@ ol li {
 .show {
   display: block !important;
 }
+
+::selection {
+  background-color: #42b983;
+  color: #fff;
+}

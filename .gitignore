@@ -1,7 +1,4 @@
-# OS
-.DS_Store
-
-# log
+# Log
 logs
 *.log
 
@@ -9,5 +6,11 @@ logs
 .tags
 .tag*
 
+# App packaged
+dist
+
 # Dependency directory
 node_modules
+
+# OS files
+.DS_Store
