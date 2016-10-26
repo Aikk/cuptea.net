@@ -15,35 +15,37 @@ let getDefaultModule = () => {
   return {
     preLoaders: [
       {
-        test:/\.(js|jsx)$/,
+        test:/\.js$/,
         include: srcPath,
-        loader: 'eslint-loader'
+        loader: 'eslint'
       }
     ],
     loaders: [
       {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
+        test: /\.scss$/,
+        exclude: path.resolve(srcPath, 'styles'),
+        loader: 'style!css?sourceMap&modules&localIdentName=[name]-[local]!postcss!sass?sourceMap'
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
+        include: path.resolve(srcPath, 'styles'),
+        loader: 'style!css!sass?sourceMap'
       },
       {
         test: /\.json$/,
-        loader: 'json-loader'
+        loader: 'json'
       },
       {
         test: /\.(txt|md)$/,
-        loader: 'raw-loader'
+        loader: 'raw'
       },
       {
-        test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,
-        loader: 'url-loader?limit=8192'
+        test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url?limit=8192'
       },
       {
         test: /\.(mp4|ogg|svg)$/,
-        loader: 'file-loader'
+        loader: 'file'
       }
     ]
   }

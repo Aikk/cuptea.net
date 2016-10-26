@@ -1,6 +1,3 @@
-// Import css
-import 'styles/App.scss'
-
 import React from 'react'
 import { render } from 'react-dom'
 

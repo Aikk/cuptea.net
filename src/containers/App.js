@@ -1,11 +1,10 @@
+import 'styles/base.scss'
+
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-
-// Import Containers
+// Import Components
 import Welcome from 'containers/Welcome'
-import Header from 'containers/Header'
-import Footer from 'containers/Footer'
 
 
 class App extends Component {
@@ -13,8 +12,6 @@ class App extends Component {
     return (
       <section className="app">
         <Welcome />
-        <Header />
-        <Footer />
       </section>
     )
   }

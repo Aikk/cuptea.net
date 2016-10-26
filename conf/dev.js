@@ -13,7 +13,7 @@ let config = Object.assign({}, base, {
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
-  cache: true,
+  cache: false,
   devtool: 'cheap-module-eval-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -26,9 +26,9 @@ let config = Object.assign({}, base, {
 });
 
 config.module.loaders.push({
-  test: /\.(js|jsx)$/,
-  loader: 'babel-loader',
-  include: defaults.srcPath
+  test: /\.(jsx?)$/,
+  include: defaults.srcPath,
+  loader: 'react-hot-loader/webpack!babel'
 });
 
 module.exports = config;
