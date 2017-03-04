@@ -1,16 +1,18 @@
-# Log
-logs
-*.log
-
-# Sass
-.tags
-.tag*
-
 # App packaged
 dist
 
 # Dependency directory
 node_modules
 
+# Log
+logs
+*.log
+
+# Sass
+.tags*
+
 # OS files
 .DS_Store
+
+# IDE
+.idea
